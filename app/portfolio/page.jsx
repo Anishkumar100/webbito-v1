@@ -6,6 +6,7 @@ import { Footer } from '@/components/footer';
 import { ExternalLink, Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ScrollReveal, TiltCard, ScaleIn } from '@/components/animations';
+import Link from 'next/link';
 
 const PROJECTS = [
   {
