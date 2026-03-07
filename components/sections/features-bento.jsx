@@ -54,7 +54,7 @@ export function FeaturesBento() {
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-              Why Choose <span className="glow-text">Webbito</span>
+              Why Choose <span className="glow-text">TheWebytes</span>
             </h2>
             <p className="text-lg text-foreground/70">
               We combine technical excellence with creative innovation to deliver exceptional results.

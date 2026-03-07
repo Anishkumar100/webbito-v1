@@ -95,7 +95,7 @@ export function Navbar() {
                 {/* Show name on all screen sizes */}
                 <div className="flex flex-col">
                   <span className="text-lg sm:text-xl md:text-2xl font-black tracking-tight bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
-                    Webbito
+                    TheWebytes
                   </span>
                   <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-gray-500 dark:text-gray-500 uppercase -mt-0.5 sm:-mt-1 group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors duration-300">
                     Digital Excellence

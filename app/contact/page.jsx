@@ -78,7 +78,7 @@ export default function ContactPage() {
         phone: fullPhone,
         service: formData.service,
         message: formData.message,
-        from_name: 'Webbito Contact Form',
+        from_name: 'TheWebytes Contact Form',
         subject: `New Contact Form Submission - ${formData.service}`,
       }),
     });

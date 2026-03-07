@@ -19,7 +19,7 @@ const CTA = dynamic(() => import('@/components/sections/cta').then(mod => ({ def
 const FloatingParticles = dynamic(() => import('@/components/ui/floating-particles').then(mod => ({ default: mod.FloatingParticles })));
 
 export const metadata = {
-  title: 'Webbito - Premium Software Development & Digital Agency',
+  title: 'TheWebytes - Premium Software Development & Digital Agency',
   description: 'Transform your ideas into reality with cutting-edge web development, mobile apps, and digital solutions. Expert team delivering scalable, high-performance solutions.',
 };
 

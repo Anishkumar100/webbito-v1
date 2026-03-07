@@ -7,7 +7,7 @@ const TESTIMONIALS = [
   {
     name: 'Rajesh Kumar',
     role: 'CEO, TechStart India',
-    content: 'Webbito transformed our digital presence completely. Their attention to detail and technical expertise is unmatched.',
+    content: 'TheWebytes transformed our digital presence completely. Their attention to detail and technical expertise is unmatched.',
     rating: 5,
     image: '👨‍💼',
   },
@@ -28,7 +28,7 @@ const TESTIMONIALS = [
   {
     name: 'Sneha Reddy',
     role: 'Product Manager, AppWorks',
-    content: 'Our mobile app launch was a huge success thanks to Webbito\'s exceptional development team.',
+    content: 'Our mobile app launch was a huge success thanks to TheWebytes\'s exceptional development team.',
     rating: 5,
     image: '👩‍💻',
   },

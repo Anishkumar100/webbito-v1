@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const faqs = [
   {
-    question: "What services does Webbito offer?",
+    question: "What services does TheWebytes offer?",
     answer: "We offer comprehensive digital solutions including Web Development, E-commerce Development, WordPress Development, UI/UX Design, Mobile App Development, Digital Marketing, Custom Software Development, Server Management, Deployment Services, and Web Hosting."
   },
   {

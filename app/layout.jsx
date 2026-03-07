@@ -15,12 +15,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: 'Webbito - Premium Software Development & Digital Agency',
+  title: 'TheWebytes - Premium Software Development & Digital Agency',
   description: 'Expert web development, app development, UI/UX design, and digital marketing services. Transform your business with cutting-edge technology solutions.',
   keywords: ['web development', 'app development', 'digital agency', 'UI/UX design', 'e-commerce'],
-  authors: [{ name: 'Webbito' }],
+  authors: [{ name: 'TheWebytes' }],
   openGraph: {
-    title: 'Webbito - Premium Software Development & Digital Agency',
+    title: 'TheWebytes - Premium Software Development & Digital Agency',
     description: 'Expert web development, app development, UI/UX design, and digital marketing services.',
     type: 'website',
   },

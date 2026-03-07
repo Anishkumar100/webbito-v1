@@ -69,7 +69,7 @@ export function WhyChooseUs() {
               viewport={{ once: true }}
               className="inline-block px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6"
             >
-              <span className="text-cyan-500 font-semibold">Why Webbito</span>
+              <span className="text-cyan-500 font-semibold">Why TheWebytes</span>
             </motion.div>
             
             <h2 className="text-4xl md:text-5xl font-bold mb-4">

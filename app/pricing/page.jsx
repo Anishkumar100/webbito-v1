@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { ScrollReveal, TiltCard, ScaleIn } from '@/components/animations';
 
 export const metadata = {
-  title: 'Pricing - Webbito',
+  title: 'Pricing - TheWebytes',
   description: 'Transparent pricing for all our services. Choose the plan that fits your needs.',
 };
 

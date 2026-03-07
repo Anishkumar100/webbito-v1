@@ -45,7 +45,7 @@ export function Footer() {
                 <span className="text-white font-bold text-xl">W</span>
               </div>
               <span className="text-xl font-heading font-bold glow-text">
-                Webbito
+                TheWebytes
               </span>
             </div>
             
@@ -117,7 +117,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-heading font-semibold mb-6">Newsletter</h3>
             <p className="text-sm text-foreground/70 mb-4">
-              Subscribe to get the latest news and updates from Webbito.
+              Subscribe to get the latest news and updates from TheWebytes.
             </p>
             
             <form onSubmit={handleSubmit} className="space-y-3">

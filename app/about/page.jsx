@@ -69,7 +69,7 @@ const LEADERSHIP = [
 ];
 
 const TESTIMONIALS = [
-  { quote: "Working with Webbito has been a game-changer. Their technical expertise and clear communication made a complex project feel manageable.", author: "Sarah Chen", role: "CEO, TechFlow Solutions", rating: 5 },
+  { quote: "Working with TheWebytes has been a game-changer. Their technical expertise and clear communication made a complex project feel manageable.", author: "Sarah Chen", role: "CEO, TechFlow Solutions", rating: 5 },
   { quote: "What impressed me most was their ability to understand our business needs and translate them into technical solutions.", author: "Michael Rodriguez", role: "CTO, DataVerse Inc", rating: 5 },
   { quote: "The team delivered our mobile app ahead of schedule without compromising on quality. Exceptional post-launch support.", author: "Aisha Patel", role: "Founder, EduSpace", rating: 5 },
 ];
@@ -133,7 +133,7 @@ export default function AboutPage() {
                 <div className="mb-8 relative z-10">
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-sm font-medium text-cyan-600 dark:text-cyan-400">
                     <Sparkles className="w-4 h-4" />
-                    About Webbito
+                    About Us
                   </span>
                 </div>
 
@@ -146,7 +146,7 @@ export default function AboutPage() {
 
                 <div className="space-y-6 relative z-10">
                   <p className="text-2xl text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Webbito is a software development agency based in Chennai, India. We specialize in web applications, mobile apps, and digital transformation projects for businesses worldwide.
+                    TheWebytes is a software development agency based in Chennai, India. We specialize in web applications, mobile apps, and digital transformation projects for businesses worldwide.
                   </p>
                   <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                     What started as three developers working from a shared office has grown into a 50-person team serving clients across five continents.
