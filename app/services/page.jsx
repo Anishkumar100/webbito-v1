@@ -208,7 +208,7 @@ export default function ServicesPage() {
             <div className="relative h-full flex items-center justify-center">
               {/* Center hub */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-                <div className="w-36 h-36 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 shadow-2xl flex items-center justify-center">
+                <div className="w-40 h-40 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 shadow-2xl flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-white">TheWebytes</div>
                     <div className="text-xs text-cyan-100">Core</div>
