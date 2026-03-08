@@ -14,11 +14,11 @@ import Link from 'next/link';
 
 // ✅ CHANGE 1: 2014 → 2024, timeline condensed to 2 years
 const MILESTONES = [
-  { year: '2024 Q1', title: 'Founded', description: '3 developers, 1 shared desk, unlimited ambition', icon: Rocket },
-  { year: '2024 Q2', title: 'First Clients', description: 'Onboarded first 10 clients, delivered 30+ projects', icon: TrendingUp },
-  { year: '2024 Q3', title: 'Team Growth', description: 'Expanded to a 10-person team, hit 100+ projects', icon: Users },
-  { year: '2024 Q4', title: 'Recognition', description: 'Earned top client ratings and referrals across sectors', icon: Trophy },
-  { year: '2025 Q2', title: 'Scale Up', description: '200+ projects delivered, growing client base globally', icon: Award },
+  { year: '2024', title: 'Founded', description: '3 developers, 1 shared desk, unlimited ambition', icon: Rocket },
+  { year: '2024', title: 'First Clients', description: 'Onboarded first 10 clients, delivered 30+ projects', icon: TrendingUp },
+  { year: '2024', title: 'Team Growth', description: 'Expanded to a 10-person team, hit 100+ projects', icon: Users },
+  { year: '2024', title: 'Recognition', description: 'Earned top client ratings and referrals across sectors', icon: Trophy },
+  { year: '2025', title: 'Scale Up', description: '200+ projects delivered, growing client base globally', icon: Award },
   { year: '2026', title: 'Present Day', description: '270+ completed projects, trusted by clients worldwide', icon: Star },
 ];
 
