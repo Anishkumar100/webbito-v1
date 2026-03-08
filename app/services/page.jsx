@@ -376,7 +376,7 @@ export default function ServicesPage() {
                           </ul>
 
                           {/* Footer */}
-                         // ✅ Pricing removed — Explore arrow aligned to right
+                         
                           <div className="flex items-center justify-end pt-4 border-t border-gray-200 dark:border-gray-800">
                             <div className="flex items-center gap-1 text-cyan-500 group-hover:gap-2 transition-all text-sm font-semibold">
                               <span>Explore</span>
