@@ -12,14 +12,14 @@ import { ScrollReveal, TiltCard } from '@/components/animations';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
-// Company milestones
+// ✅ CHANGE 1: 2014 → 2024, timeline condensed to 2 years
 const MILESTONES = [
-  { year: '2014', title: 'Founded', description: '3 developers, 1 shared desk, unlimited ambition', icon: Rocket },
-  { year: '2016', title: 'First Growth Phase', description: 'Reached 50 clients, expanded to 10-person team', icon: TrendingUp },
-  { year: '2018', title: 'International Expansion', description: 'Delivered 200+ projects across multiple countries', icon: Trophy },
-  { year: '2020', title: 'Remote Transformation', description: 'Successfully transitioned to distributed team model', icon: Users },
-  { year: '2023', title: 'Industry Recognition', description: 'Received multiple awards and industry accolades', icon: Award },
-  { year: '2026', title: 'Present Day', description: '50-person team, 500+ completed projects', icon: Star },
+  { year: '2024 Q1', title: 'Founded', description: '3 developers, 1 shared desk, unlimited ambition', icon: Rocket },
+  { year: '2024 Q2', title: 'First Clients', description: 'Onboarded first 10 clients, delivered 30+ projects', icon: TrendingUp },
+  { year: '2024 Q3', title: 'Team Growth', description: 'Expanded to a 10-person team, hit 100+ projects', icon: Users },
+  { year: '2024 Q4', title: 'Recognition', description: 'Earned top client ratings and referrals across sectors', icon: Trophy },
+  { year: '2025 Q2', title: 'Scale Up', description: '200+ projects delivered, growing client base globally', icon: Award },
+  { year: '2026', title: 'Present Day', description: '270+ completed projects, trusted by clients worldwide', icon: Star },
 ];
 
 const VALUES = [
@@ -30,43 +30,41 @@ const VALUES = [
 ];
 
 const WHY_US = [
-  { icon: Shield, title: 'Proven Track Record', description: 'Over a decade of successful project delivery across diverse industries.' },
+  { icon: Shield, title: 'Proven Track Record', description: 'Consistent project delivery across diverse industries since day one.' },
   { icon: HeartHandshake, title: 'Dedicated Support', description: 'Direct access to senior developers throughout the entire lifecycle.' },
   { icon: BarChart3, title: 'Measurable Results', description: 'We focus on metrics that matter - engagement, conversion, growth.' },
   { icon: Lock, title: 'Security First', description: 'Built-in security best practices and compliance from day one.' },
 ];
 
+// ✅ CHANGE 2: weeks → days
 const PROCESS_STEPS = [
-  { number: '01', title: 'Discovery', description: 'Understanding your business goals, user needs, and technical requirements.', duration: '1-2 weeks' },
-  { number: '02', title: 'Planning', description: 'Detailed project roadmap, architecture design, and resource allocation.', duration: '1-2 weeks' },
+  { number: '01', title: 'Discovery', description: 'Understanding your business goals, user needs, and technical requirements.', duration: '2-4 days' },
+  { number: '02', title: 'Planning', description: 'Detailed project roadmap, architecture design, and resource allocation.', duration: '2-3 days' },
   { number: '03', title: 'Development', description: 'Agile development with regular updates, demos, and feedback cycles.', duration: 'Variable' },
-  { number: '04', title: 'Quality Assurance', description: 'Comprehensive testing across devices, browsers, and use cases.', duration: '1-2 weeks' },
-  { number: '05', title: 'Deployment', description: 'Smooth launch with monitoring, optimization, and performance tuning.', duration: '1 week' },
+  { number: '04', title: 'Quality Assurance', description: 'Comprehensive testing across devices, browsers, and use cases.', duration: '3-5 days' },
+  { number: '05', title: 'Deployment', description: 'Smooth launch with monitoring, optimization, and performance tuning.', duration: '1-2 days' },
   { number: '06', title: 'Support', description: 'Ongoing maintenance, updates, and technical support as needed.', duration: 'Ongoing' },
 ];
 
+// ✅ CHANGE 3: Added cPanel and VPS to Cloud
 const TECH_STACK = [
   { category: 'Frontend', tools: ['React', 'Next.js', 'Vue.js', 'TypeScript', 'Tailwind CSS'], icon: Code2 },
   { category: 'Backend', tools: ['Node.js', 'Python', 'Java', 'PostgreSQL', 'MongoDB'], icon: Database },
   { category: 'Mobile', tools: ['React Native', 'Flutter', 'iOS', 'Android'], icon: Smartphone },
-  { category: 'Cloud', tools: ['AWS', 'Google Cloud', 'Azure', 'Vercel', 'Docker'], icon: Cloud },
+  { category: 'Cloud', tools: ['AWS', 'Google Cloud', 'Azure', 'Vercel', 'Docker', 'cPanel', 'VPS'], icon: Cloud },
 ];
 
+// ✅ CHANGE 4: Industries total projects ≤ 270
 const INDUSTRIES = [
-  { name: 'E-commerce', icon: '🛒', projects: '120+' },
-  { name: 'Healthcare', icon: '🏥', projects: '80+' },
-  { name: 'Fintech', icon: '💰', projects: '65+' },
-  { name: 'Education', icon: '📚', projects: '90+' },
-  { name: 'SaaS', icon: '☁️', projects: '75+' },
-  { name: 'Real Estate', icon: '🏢', projects: '45+' },
+  { name: 'E-commerce', icon: '🛒', projects: '70+' },
+  { name: 'Healthcare', icon: '🏥', projects: '40+' },
+  { name: 'Fintech', icon: '💰', projects: '35+' },
+  { name: 'Education', icon: '📚', projects: '50+' },
+  { name: 'SaaS', icon: '☁️', projects: '45+' },
+  { name: 'Real Estate', icon: '🏢', projects: '30+' },
 ];
 
-const LEADERSHIP = [
-  { name: 'Rahul Sharma', role: 'Founder & CEO', avatar: '👨‍💼', background: '15+ years in enterprise software' },
-  { name: 'Priya Patel', role: 'Design Director', avatar: '👩‍🎨', background: 'Former design lead at major tech' },
-  { name: 'Arjun Kumar', role: 'Technical Director', avatar: '👨‍💻', background: 'Full-stack architect with startup exp' },
-  { name: 'Sneha Reddy', role: 'Operations Manager', avatar: '👩‍💼', background: 'PMP certified project specialist' },
-];
+// ✅ LEADERSHIP removed entirely
 
 const TESTIMONIALS = [
   { quote: "Working with TheWebytes has been a game-changer. Their technical expertise and clear communication made a complex project feel manageable.", author: "Sarah Chen", role: "CEO, TechFlow Solutions", rating: 5 },
@@ -137,10 +135,11 @@ export default function AboutPage() {
                   </span>
                 </div>
 
+                {/* ✅ CHANGE: 2014 → 2024 */}
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-gray-900 dark:text-white leading-tight relative z-10">
                   Building digital products{' '}
                   <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                    since 2014
+                    since 2024
                   </span>
                 </h1>
 
@@ -149,7 +148,7 @@ export default function AboutPage() {
                     TheWebytes is a software development agency based in Chennai, India. We specialize in web applications, mobile apps, and digital transformation projects for businesses worldwide.
                   </p>
                   <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                    What started as three developers working from a shared office has grown into a 50-person team serving clients across five continents.
+                    What started as three developers working from a shared office has grown into a results-driven team serving clients across multiple sectors.
                   </p>
                 </div>
               </div>
@@ -162,11 +161,11 @@ export default function AboutPage() {
           {/* Desktop: Circular Layout */}
           <div className="hidden lg:block relative max-w-5xl mx-auto h-[500px]">
             <div className="flex items-center justify-center h-full">
-              {/* Center hub */}
+              {/* ✅ CHANGE: 12+ → 2+ Years */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                 <div className="w-40 h-40 rounded-full bg-gradient-to-br from-cyan-500 via-blue-600 to-purple-600 shadow-2xl flex items-center justify-center">
                   <div className="text-center text-white">
-                    <div className="text-3xl font-bold">12+</div>
+                    <div className="text-3xl font-bold">2+</div>
                     <div className="text-sm">Years</div>
                   </div>
                 </div>
@@ -175,9 +174,9 @@ export default function AboutPage() {
               {/* Connecting ring */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full border-2 border-dashed border-cyan-500/20" />
 
-              {/* Stats in orbit */}
+              {/* ✅ CHANGE: 500+ → 270+ Projects */}
               {[
-                { value: 500, label: 'Projects', icon: CheckCircle2, suffix: '+' },
+                { value: 270, label: 'Projects', icon: CheckCircle2, suffix: '+' },
                 { value: 200, label: 'Clients', icon: Users, suffix: '+' },
                 { value: 50, label: 'Team', icon: Award, suffix: '+' },
                 { value: 98, label: 'Retention', icon: Star, suffix: '%' },
@@ -218,7 +217,7 @@ export default function AboutPage() {
           {/* Mobile: Grid Layout */}
           <div className="lg:hidden grid grid-cols-2 gap-4 max-w-2xl mx-auto">
             {[
-              { value: 500, label: 'Projects', icon: CheckCircle2, suffix: '+' },
+              { value: 270, label: 'Projects', icon: CheckCircle2, suffix: '+' },
               { value: 200, label: 'Clients', icon: Users, suffix: '+' },
               { value: 50, label: 'Team', icon: Award, suffix: '+' },
               { value: 98, label: 'Retention', icon: Star, suffix: '%' },
@@ -263,7 +262,6 @@ export default function AboutPage() {
                   <ScrollReveal key={index} delay={index * 0.1}>
                     <div className="relative">
                       <div className="absolute -top-2 -left-2 w-4 h-4 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 border-4 border-white dark:border-gray-950 hidden lg:block z-10" />
-
                       <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-cyan-500 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 h-full">
                         <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-4">
                           <item.icon className="w-6 h-6 text-white" />
@@ -300,7 +298,6 @@ export default function AboutPage() {
             {/* Desktop: Circular Clock Layout */}
             <div className="hidden lg:block relative h-[900px]">
               <div className="flex items-center justify-center h-full">
-                {/* Center hub */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                   <div className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 shadow-2xl flex items-center justify-center">
                     <div className="text-center">
@@ -310,13 +307,11 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                {/* Orbital ring */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border-2 border-dashed border-cyan-500/20" />
 
-                {/* Milestones positioned in circle */}
                 {MILESTONES.map((milestone, index) => {
                   const angle = (index * 360) / MILESTONES.length - 90;
-                  const radius = 330; // Increased from 280 to 330
+                  const radius = 330;
                   const x = Math.cos((angle * Math.PI) / 180) * radius;
                   const y = Math.sin((angle * Math.PI) / 180) * radius;
 
@@ -338,7 +333,7 @@ export default function AboutPage() {
                             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0">
                               <milestone.icon className="w-5 h-5 text-white" />
                             </div>
-                            <span className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">
+                            <span className="text-lg font-bold text-cyan-600 dark:text-cyan-400">
                               {milestone.year}
                             </span>
                           </div>
@@ -367,7 +362,7 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <div className="flex-1">
-                      <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mb-2">
+                      <div className="text-xl font-bold text-cyan-600 dark:text-cyan-400 mb-2">
                         {milestone.year}
                       </div>
                       <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
@@ -414,13 +409,13 @@ export default function AboutPage() {
                         <div className="absolute -top-3 -right-3 w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-sm font-bold shadow-lg">
                           {step.number}
                         </div>
-
                         <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">
                           {step.title}
                         </h3>
                         <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
                           {step.description}
                         </p>
+                        {/* ✅ CHANGE: weeks → days */}
                         <div className="inline-flex items-center gap-2 text-xs text-cyan-600 dark:text-cyan-400 font-semibold">
                           <Clock className="w-3 h-3" />
                           {step.duration}
@@ -484,14 +479,10 @@ export default function AboutPage() {
 
             {/* Desktop: Tree Layout */}
             <div className="hidden lg:block relative">
-              {/* Root/Trunk */}
               <div className="flex justify-center mb-12">
                 <ScrollReveal>
                   <div className="relative">
-                    {/* Trunk line going down */}
                     <div className="absolute top-full left-1/2 -translate-x-1/2 w-1 h-12 bg-gradient-to-b from-cyan-500 to-transparent" />
-
-                    {/* Root hub */}
                     <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-cyan-500 via-blue-600 to-purple-600 shadow-2xl flex items-center justify-center relative z-10">
                       <div className="text-center">
                         <Layers className="w-12 h-12 text-white mx-auto mb-2" />
@@ -502,38 +493,24 @@ export default function AboutPage() {
                 </ScrollReveal>
               </div>
 
-              {/* Branches Container */}
               <div className="relative">
-                {/* Main horizontal branch line */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" style={{ top: '20px' }} />
 
-                {/* Vertical connecting lines from center */}
                 <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ height: '500px' }}>
-                  {/* Branch to Frontend (left) */}
                   <path d="M 50% 0 L 12.5% 20 L 12.5% 80" stroke="currentColor" strokeWidth="2" className="text-cyan-500/30" fill="none" strokeDasharray="4 4" />
-
-                  {/* Branch to Backend (left-center) */}
                   <path d="M 50% 0 L 37.5% 20 L 37.5% 80" stroke="currentColor" strokeWidth="2" className="text-cyan-500/30" fill="none" strokeDasharray="4 4" />
-
-                  {/* Branch to Mobile (right-center) */}
                   <path d="M 50% 0 L 62.5% 20 L 62.5% 80" stroke="currentColor" strokeWidth="2" className="text-cyan-500/30" fill="none" strokeDasharray="4 4" />
-
-                  {/* Branch to Cloud (right) */}
                   <path d="M 50% 0 L 87.5% 20 L 87.5% 80" stroke="currentColor" strokeWidth="2" className="text-cyan-500/30" fill="none" strokeDasharray="4 4" />
                 </svg>
 
-                {/* Branch Cards */}
                 <div className="grid grid-cols-4 gap-6 relative pt-20">
                   {TECH_STACK.map((stack, index) => (
                     <ScrollReveal key={index} delay={index * 0.15}>
                       <div className="relative">
-                        {/* Connection dot */}
                         <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 border-4 border-white dark:border-gray-950 z-10 shadow-lg" />
-
-                        {/* Card */}
                         <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-cyan-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full">
                           <div className="flex flex-col items-center mb-6">
-                            <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                            <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-4 shadow-lg">
                               <stack.icon className="w-8 h-8 text-white" />
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 dark:text-white text-center">
@@ -594,7 +571,6 @@ export default function AboutPage() {
             <ScrollReveal>
               <div className="relative bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-950/20 dark:to-blue-950/20 rounded-3xl p-10 border-2 border-cyan-200 dark:border-cyan-900 overflow-hidden group">
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500/10 rounded-full group-hover:scale-150 transition-transform duration-700" />
-
                 <div className="relative">
                   <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-6 shadow-lg group-hover:rotate-12 transition-transform">
                     <Target className="w-8 h-8 text-white" />
@@ -612,7 +588,6 @@ export default function AboutPage() {
             <ScrollReveal delay={0.1}>
               <div className="relative bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 rounded-3xl p-10 border-2 border-purple-200 dark:border-purple-900 overflow-hidden group">
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/10 rounded-full group-hover:scale-150 transition-transform duration-700" />
-
                 <div className="relative">
                   <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center mb-6 shadow-lg group-hover:rotate-12 transition-transform">
                     <Eye className="w-8 h-8 text-white" />
@@ -647,7 +622,7 @@ export default function AboutPage() {
               {VALUES.map((value, index) => (
                 <ScrollReveal key={index} delay={index * 0.1}>
                   <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 border-2 border-gray-200 dark:border-gray-800 hover:border-cyan-500 hover:shadow-2xl transition-all duration-300">
-                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${value.gradient} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all`}>
+                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${value.gradient} flex items-center justify-center mb-6 shadow-lg`}>
                       <value.icon className="w-7 h-7 text-white" />
                     </div>
                     <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
@@ -663,53 +638,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Leadership */}
-        <section className="container mx-auto px-4 mb-40">
-          <div className="max-w-6xl mx-auto">
-            <ScrollReveal>
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-                  Leadership Team
-                </h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
-                  Experienced professionals guiding our vision
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <div className="relative">
-              <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block">
-                <line x1="25%" y1="50%" x2="75%" y2="50%" stroke="currentColor" strokeWidth="1" className="text-cyan-500/20" strokeDasharray="4 4" />
-                <line x1="50%" y1="30%" x2="50%" y2="70%" stroke="currentColor" strokeWidth="1" className="text-cyan-500/20" strokeDasharray="4 4" />
-                <line x1="25%" y1="30%" x2="75%" y2="70%" stroke="currentColor" strokeWidth="1" className="text-cyan-500/20" strokeDasharray="4 4" />
-                <line x1="75%" y1="30%" x2="25%" y2="70%" stroke="currentColor" strokeWidth="1" className="text-cyan-500/20" strokeDasharray="4 4" />
-              </svg>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
-                {LEADERSHIP.map((member, index) => (
-                  <ScrollReveal key={index} delay={index * 0.1}>
-                    <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-cyan-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center relative">
-                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 border-4 border-white dark:border-gray-950 hidden lg:block z-10" />
-
-                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mx-auto mb-4 text-5xl shadow-xl">
-                        {member.avatar}
-                      </div>
-                      <h3 className="text-lg font-bold mb-1 text-gray-900 dark:text-white">
-                        {member.name}
-                      </h3>
-                      <p className="text-sm text-cyan-600 dark:text-cyan-400 font-semibold mb-3">
-                        {member.role}
-                      </p>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                        {member.background}
-                      </p>
-                    </div>
-                  </ScrollReveal>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* ✅ Leadership section REMOVED entirely */}
 
         {/* Testimonials */}
         <section className="container mx-auto px-4 mb-40">
@@ -733,7 +662,6 @@ export default function AboutPage() {
                   <ScrollReveal key={index} delay={index * 0.1}>
                     <div className="relative">
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 border-4 border-white dark:border-gray-950 hidden md:block z-10" />
-
                       <div className="bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-950/20 dark:to-blue-950/20 rounded-2xl p-8 border-2 border-cyan-200 dark:border-cyan-900 hover:shadow-xl hover:-translate-y-2 transition-all">
                         <div className="flex gap-1 mb-4">
                           {[...Array(testimonial.rating)].map((_, i) => (
@@ -776,14 +704,12 @@ export default function AboutPage() {
                 <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm mb-8">
                   <Sparkles className="w-10 h-10 text-white" />
                 </div>
-
                 <h2 className="text-5xl font-bold mb-6">
                   Let's Build Something Great
                 </h2>
                 <p className="text-2xl mb-10 text-cyan-50 max-w-2xl mx-auto">
                   Schedule a free consultation to discuss your project
                 </p>
-
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
                     href="/contact"
@@ -792,7 +718,6 @@ export default function AboutPage() {
                     Start a Project
                     <ArrowRight className="w-6 h-6" />
                   </Link>
-
                 </div>
               </div>
             </div>
