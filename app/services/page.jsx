@@ -4,12 +4,12 @@ import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { SERVICES } from '@/lib/constants';
 import Link from 'next/link';
-import { 
-  ArrowRight, 
-  CheckCircle2, 
-  Users, 
-  Award, 
-  Clock, 
+import {
+  ArrowRight,
+  CheckCircle2,
+  Users,
+  Award,
+  Clock,
   Shield,
   Zap,
   Target,
@@ -117,24 +117,24 @@ export default function ServicesPage() {
         <Navbar />
         <main className="pt-32 pb-24 overflow-hidden">
           <div className="fixed inset-0 -z-10 bg-gradient-to-b from-cyan-50/30 via-transparent to-blue-50/30 dark:from-cyan-950/10 dark:via-transparent dark:to-blue-950/10 pointer-events-none" />
-          
+
           <section className="container mx-auto px-4 mb-32">
             <div className="text-center max-w-4xl mx-auto relative">
               <div className="absolute -top-20 -left-20 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl" />
               <div className="absolute -top-10 -right-10 w-60 h-60 bg-blue-500/5 rounded-full blur-3xl" />
-              
+
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-sm font-medium text-cyan-600 dark:text-cyan-400 mb-8">
                 <Sparkles className="w-4 h-4" />
                 Our Services
               </span>
-              
+
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-gray-900 dark:text-white leading-[1.1] relative z-10">
                 Digital Solutions That Drive{' '}
                 <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
                   Real Results
                 </span>
               </h1>
-              
+
               <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed relative z-10">
                 From concept to launch, we deliver excellence in every project
               </p>
@@ -160,19 +160,19 @@ export default function ServicesPage() {
               {/* Decorative circles */}
               <div className="absolute -top-20 -left-20 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl" />
               <div className="absolute -top-10 -right-10 w-60 h-60 bg-blue-500/5 rounded-full blur-3xl" />
-              
+
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-sm font-medium text-cyan-600 dark:text-cyan-400 mb-8">
                 <Sparkles className="w-4 h-4" />
                 Our Services
               </span>
-              
+
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-gray-900 dark:text-white leading-[1.1] relative z-10">
                 Digital Solutions That Drive{' '}
                 <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
                   Real Results
                 </span>
               </h1>
-              
+
               <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed relative z-10">
                 From concept to launch, we deliver excellence in every project
               </p>
@@ -329,14 +329,14 @@ export default function ServicesPage() {
                         />
                       </svg>
 
-                      <Link 
+                      <Link
                         href={`/services/${service.slug}`}
                         onMouseEnter={() => setHoveredService(index)}
                         onMouseLeave={() => setHoveredService(null)}
                       >
                         <div className={`group relative bg-white dark:bg-gray-900 rounded-2xl p-8 border-2 transition-all duration-300 h-full
-                          ${hoveredService === index 
-                            ? 'border-cyan-500 shadow-2xl shadow-cyan-500/20 -translate-y-2' 
+                          ${hoveredService === index
+                            ? 'border-cyan-500 shadow-2xl shadow-cyan-500/20 -translate-y-2'
                             : 'border-gray-200 dark:border-gray-800 hover:border-cyan-500/50'
                           }`}
                         >
@@ -376,15 +376,14 @@ export default function ServicesPage() {
                           </ul>
 
                           {/* Footer */}
-                          <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800">
-                            <span className="text-sm font-bold text-cyan-600 dark:text-cyan-400">
-                              {service.pricing}
-                            </span>
-                            <div className="flex items-center text-cyan-500 group-hover:gap-2 transition-all text-sm font-semibold">
+                         // ✅ Pricing removed — Explore arrow aligned to right
+                          <div className="flex items-center justify-end pt-4 border-t border-gray-200 dark:border-gray-800">
+                            <div className="flex items-center gap-1 text-cyan-500 group-hover:gap-2 transition-all text-sm font-semibold">
                               <span>Explore</span>
                               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
                           </div>
+
                         </div>
                       </Link>
                     </div>
