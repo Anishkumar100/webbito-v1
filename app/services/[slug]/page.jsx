@@ -197,10 +197,7 @@ export default function ServiceDetailPage({ params }) {
                       <ArrowRight className="w-5 h-5" />
                     </Button>
                   </Link>
-                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                    <CheckCircle2 className="w-4 h-4 text-green-500" />
-                    <span>Starting at <span className="font-bold text-cyan-600 dark:text-cyan-400">{service.pricing}</span></span>
-                  </div>
+                  
                 </div>
               </div>
             </ScrollReveal>
