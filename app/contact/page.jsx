@@ -423,7 +423,7 @@ export default function ContactPage() {
                 <Sparkles className="w-12 h-12 mx-auto mb-4" />
                 <h3 className="text-3xl font-bold mb-4">Ready to start your project?</h3>
                 <p className="text-xl text-cyan-50 mb-6">
-                  Join 500+ satisfied clients who trust us with their digital presence
+                  Join 270+ satisfied clients who trust us with their digital presence
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-8 text-sm">
                   <div className="flex items-center gap-2">
