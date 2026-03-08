@@ -4,11 +4,11 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ScrollReveal } from '@/components/animations';
 
-// All logos from devicon CDN — transparent SVGs, no background needed
+// darkBg: true = wrap in white bg pill on dark mode (for black/dark SVGs)
 const technologies = {
   frontend: [
     { name: 'React',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-    { name: 'Next.js',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+    { name: 'Next.js',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg', darkBg: true },
     { name: 'Vue.js',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
     { name: 'Tailwind',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
     { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
@@ -16,8 +16,8 @@ const technologies = {
   backend: [
     { name: 'Node.js',  icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
     { name: 'Python',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-    { name: 'Django',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
-    { name: 'Express',  icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+    { name: 'Django',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg', darkBg: true },
+    { name: 'Express',  icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg', darkBg: true },
     { name: 'GraphQL',  icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg' },
   ],
   mobile: [
@@ -28,8 +28,8 @@ const technologies = {
     { name: 'Ionic',        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg' },
   ],
   cloud: [
-    { name: 'AWS',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' },
-    { name: 'Vercel',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg' },
+    { name: 'AWS',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg', darkBg: true },
+    { name: 'Vercel',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original-wordmark.svg', darkBg: true },
     { name: 'Azure',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
     { name: 'Docker',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
     { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
@@ -55,7 +55,13 @@ function TechCategory({ title, techs, delay = 0 }) {
               className="glass px-6 py-4 rounded-2xl hover:shadow-lg hover:shadow-cyan-500/20 transition-all cursor-pointer group"
             >
               <div className="text-center">
-                <div className="w-10 h-10 mx-auto mb-2 relative group-hover:scale-110 transition-transform">
+                {/* ✅ White pill bg in dark mode for black SVGs */}
+                <div className={`
+                  w-10 h-10 mx-auto mb-2 relative group-hover:scale-110 transition-transform
+                  ${tech.darkBg 
+                    ? 'dark:bg-white dark:rounded-lg dark:p-1' 
+                    : ''}
+                `}>
                   <Image
                     src={tech.icon}
                     alt={tech.name}
@@ -109,7 +115,6 @@ export function TechStack() {
           <TechCategory title="Cloud & DevOps" techs={technologies.cloud}    delay={0.3} />
         </div>
 
-        {/* Rotating circle background — unchanged */}
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
