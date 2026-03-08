@@ -302,7 +302,9 @@ export default function ServicesPage() {
             </div>
 
             {/* Services as tree branches */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20 relative">
+           
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20 relative [&>*:last-child]:lg:col-start-2">
+
               {SERVICES.map((service, index) => {
                 const Icon = service.icon;
 
