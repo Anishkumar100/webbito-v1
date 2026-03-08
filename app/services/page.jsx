@@ -28,7 +28,7 @@ const BENEFITS = [
   {
     icon: Users,
     title: 'Expert Team',
-    description: 'Seasoned professionals with 10+ years of combined experience.'
+    description: 'Seasoned professionals with 2+ years of combined experience.'
   },
   {
     icon: Award,
@@ -77,7 +77,7 @@ const PROCESS = [
 
 // Stats
 const STATS = [
-  { value: '500+', label: 'Projects', icon: CheckCircle2 },
+  { value: '270+', label: 'Projects', icon: CheckCircle2 },
   { value: '98%', label: 'Satisfaction', icon: Star },
   { value: '50+', label: 'Experts', icon: Users },
   { value: '24/7', label: 'Support', icon: MessageCircle },
@@ -208,7 +208,7 @@ export default function ServicesPage() {
             <div className="relative h-full flex items-center justify-center">
               {/* Center hub */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 shadow-2xl flex items-center justify-center">
+                <div className="w-36 h-36 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 shadow-2xl flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-white">TheWebytes</div>
                     <div className="text-xs text-cyan-100">Core</div>
@@ -302,8 +302,8 @@ export default function ServicesPage() {
             </div>
 
             {/* Services as tree branches */}
-           
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20 relative [&>*:last-child]:lg:col-start-2">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20 relative [&>*:last-child]:lg:col-start-2">
 
               {SERVICES.map((service, index) => {
                 const Icon = service.icon;
@@ -378,7 +378,7 @@ export default function ServicesPage() {
                           </ul>
 
                           {/* Footer */}
-                         
+
                           <div className="flex items-center justify-end pt-4 border-t border-gray-200 dark:border-gray-800">
                             <div className="flex items-center gap-1 text-cyan-500 group-hover:gap-2 transition-all text-sm font-semibold">
                               <span>Explore</span>
