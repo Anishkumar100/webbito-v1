@@ -183,7 +183,7 @@ export function CTA() {
                 <span className="font-medium">💳 Secure checkout</span>
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-400">
-                <span className="font-medium">⚡ Start in 48 hours</span>
+                <span className="font-medium">⚡ Start in 2 hours</span>
               </div>
             </div>
           </div>

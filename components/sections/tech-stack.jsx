@@ -1,36 +1,38 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ScrollReveal } from '@/components/animations';
 
+// All logos from devicon CDN — transparent SVGs, no background needed
 const technologies = {
   frontend: [
-    { name: 'React', icon: '⚛️' },
-    { name: 'Next.js', icon: '▲' },
-    { name: 'Vue.js', icon: '💚' },
-    { name: 'Tailwind', icon: '🎨' },
-    { name: 'TypeScript', icon: '📘' },
+    { name: 'React',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: 'Next.js',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+    { name: 'Vue.js',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
+    { name: 'Tailwind',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+    { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
   ],
   backend: [
-    { name: 'Node.js', icon: '🟢' },
-    { name: 'Python', icon: '🐍' },
-    { name: 'Django', icon: '🎸' },
-    { name: 'Express', icon: '🚂' },
-    { name: 'GraphQL', icon: '◈' },
+    { name: 'Node.js',  icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    { name: 'Python',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+    { name: 'Django',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
+    { name: 'Express',  icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+    { name: 'GraphQL',  icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg' },
   ],
   mobile: [
-    { name: 'React Native', icon: '📱' },
-    { name: 'Flutter', icon: '🦋' },
-    { name: 'Swift', icon: '🍎' },
-    { name: 'Kotlin', icon: '🤖' },
-    { name: 'Ionic', icon: '⚡' },
+    { name: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: 'Flutter',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
+    { name: 'Swift',        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg' },
+    { name: 'Kotlin',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg' },
+    { name: 'Ionic',        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg' },
   ],
   cloud: [
-    { name: 'AWS', icon: '☁️' },
-    { name: 'Vercel', icon: '▲' },
-    { name: 'Azure', icon: '🔷' },
-    { name: 'Docker', icon: '🐳' },
-    { name: 'Firebase', icon: '🔥' },
+    { name: 'AWS',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' },
+    { name: 'Vercel',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg' },
+    { name: 'Azure',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
+    { name: 'Docker',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+    { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
   ],
 };
 
@@ -53,8 +55,15 @@ function TechCategory({ title, techs, delay = 0 }) {
               className="glass px-6 py-4 rounded-2xl hover:shadow-lg hover:shadow-cyan-500/20 transition-all cursor-pointer group"
             >
               <div className="text-center">
-                <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">
-                  {tech.icon}
+                <div className="w-10 h-10 mx-auto mb-2 relative group-hover:scale-110 transition-transform">
+                  <Image
+                    src={tech.icon}
+                    alt={tech.name}
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-contain"
+                    unoptimized
+                  />
                 </div>
                 <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   {tech.name}
@@ -94,21 +103,21 @@ export function TechStack() {
         </ScrollReveal>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          <TechCategory title="Frontend" techs={technologies.frontend} delay={0} />
-          <TechCategory title="Backend" techs={technologies.backend} delay={0.1} />
-          <TechCategory title="Mobile" techs={technologies.mobile} delay={0.2} />
-          <TechCategory title="Cloud & DevOps" techs={technologies.cloud} delay={0.3} />
+          <TechCategory title="Frontend"       techs={technologies.frontend} delay={0}   />
+          <TechCategory title="Backend"        techs={technologies.backend}  delay={0.1} />
+          <TechCategory title="Mobile"         techs={technologies.mobile}   delay={0.2} />
+          <TechCategory title="Cloud & DevOps" techs={technologies.cloud}    delay={0.3} />
         </div>
 
-        {/* Rotating circle background */}
+        {/* Rotating circle background — unchanged */}
         <motion.div
           animate={{ rotate: 360 }}
-          transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-cyan-500/10 rounded-full pointer-events-none"
         />
         <motion.div
           animate={{ rotate: -360 }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-blue-500/10 rounded-full pointer-events-none"
         />
       </div>

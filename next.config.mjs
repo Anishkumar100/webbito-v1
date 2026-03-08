@@ -16,6 +16,10 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
+
+  images: {
+      domains: ['cdn.jsdelivr.net'],
+  },
 };
 
 export default nextConfig;

@@ -203,12 +203,7 @@ export function ServicesTree() {
                         {service.title}
                       </h3>
                       
-                      <div className="flex items-center gap-2 mb-3">
-                        <div className="h-0.5 w-6 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full" />
-                        <p className="text-xs text-cyan-500 font-bold">
-                          {service.pricing}
-                        </p>
-                      </div>
+
                       
                       {/* ✅ Removed opacity transition */}
                       <div className="flex items-center text-xs text-cyan-500 font-semibold">
