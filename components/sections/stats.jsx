@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 import { TrendingUp, Users, Briefcase, Zap } from 'lucide-react';
 
 const stats = [
-  { icon: Briefcase, number: 200, suffix: '+', label: 'Projects Delivered' },
-  { icon: Users, number: 50, suffix: '+', label: 'Happy Clients' },
+  { icon: Briefcase, number: 270, suffix: '+', label: 'Projects Delivered' },
+  { icon: Users, number: 30, suffix: '+', label: 'Happy Clients' },
   { icon: TrendingUp, number: 98, suffix: '%', label: 'Success Rate' },
-  { icon: Zap, number: 5, suffix: ' Years', label: 'Experience' },
+  { icon: Zap, number: 2, suffix: ' Years', label: 'Experience' },
 ];
 
 export function Stats() {
