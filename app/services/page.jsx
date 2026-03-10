@@ -663,12 +663,7 @@ export default function ServicesPage() {
                     Get Started
                     <ArrowRight className="w-6 h-6" />
                   </Link>
-                  <Link
-                    href="/portfolio"
-                    className="inline-flex items-center justify-center gap-2 px-12 py-5 rounded-xl border-2 border-white text-white font-bold text-lg hover:bg-white/10 hover:scale-105 transition-all"
-                  >
-                    View Work
-                  </Link>
+                  
                 </div>
               </div>
             </div>

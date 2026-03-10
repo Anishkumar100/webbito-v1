@@ -73,9 +73,7 @@ export default function NotFound() {
                 <Link href="/services" className="text-cyan-600 dark:text-cyan-400 hover:underline font-medium">
                   Services
                 </Link>
-                <Link href="/portfolio" className="text-cyan-600 dark:text-cyan-400 hover:underline font-medium">
-                  Portfolio
-                </Link>
+               
                 <Link href="/about" className="text-cyan-600 dark:text-cyan-400 hover:underline font-medium">
                   About Us
                 </Link>
